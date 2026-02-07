@@ -1,0 +1,29 @@
+import React,{useState} from 'react'
+
+function themetoggle() {
+       const[theme,setTheme]=useState("light");
+       const toggleTheme=()=>{
+           setTheme(theme ==="light" ? "Dark" : "light")
+       };
+       const containerStyle={
+          minHeight:"100vh",
+          padding:"10px",
+          backgroundColor:theme === "light" ? "#222":"#fff",
+          color:theme === "Dark" ? "#030303":"#ffff"
+
+       }
+       return(
+        <div style={containerStyle}>
+           <h1>Theme Toggle Example</h1>
+           <p>Click the button to switch between Light and dark Mode</p>
+           <button onClick ={toggleTheme}>Switch to {theme === "light" ? "light": "Dark"} mode</button>
+           <div style={{marginTop:"20px"}}>
+           <p1>Text color also changes according to the selected theme</p1>
+           </div>
+    </div>
+         
+
+       );
+  }
+
+export default themetoggle
